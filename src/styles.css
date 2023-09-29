@@ -1,0 +1,11 @@
+body {
+    overflow-y: auto; /* This will add a vertical scrollbar when the content overflows */
+    overflow-x: hidden; /* This will hide the horizontal scrollbar */
+    /* /* position: fixed; */
+    margin-left: 25%; 
+    margin-bottom: 10%;
+  }
+  a {
+    text-decoration: underline;
+  }
+  
