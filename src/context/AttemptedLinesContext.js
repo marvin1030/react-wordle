@@ -68,7 +68,6 @@ const AttemptedLinesContextProvider = ({ children }) => {
             [...attemptedlineValues, line]
         )
     }
-
     useEffect(() => {
         getWords();
     }, []);

@@ -1,15 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect , useRef} from 'react';
 import Line from './Line';
 import AttemptedLines from './AttemptedLines';
 import { AttemptedLinesContext } from '../context/AttemptedLinesContext';
+import { Container, Typography } from '@mui/material';
 const Grid = () => {
 
     const { attemptedlineValues } = useContext(AttemptedLinesContext)
     return (
-        <div>
+        <Container maxWidth={"sm"}>
             {
                 attemptedlineValues.length ?
-                attemptedlineValues.map((line) => {
+                    attemptedlineValues.map((line) => {
                         return (
                             <AttemptedLines key={line.id}
                                 firstLetter={line.firstLetter}
@@ -17,15 +18,15 @@ const Grid = () => {
                                 thirdLetter={line.thirdLetter}
                                 firstLetterColor={line.firstLetterColor}
                                 secondLetterColor={line.secondLetterColor}
-                                thirdLetterColor={line.thirdLetterColor}                               
-                                >
+                                thirdLetterColor={line.thirdLetterColor}
+                            >
                             </AttemptedLines>)
                     })
                     :
-                    <p>Make your first guess!</p>
+                    <Typography style={{ marginTop: 20 }} variant="h5" align="center"> Make your first guess!</Typography>
             }
-                    <Line></Line>
-        </div>
+            <Line></Line>
+        </Container>
 
     )
 }

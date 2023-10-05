@@ -1,13 +1,21 @@
+import { Stack, TextField } from '@mui/material';
+
 const AttemptedLines = (props) => {
 
     const lineValues = props;
 
     return (
-           <div style={{overflowY:'auto'}}>
-                <input value={lineValues.firstLetter} readOnly style={{backgroundColor: lineValues.firstLetterColor, fontSize:'25px', width: '64px', textAlign: 'center'}}></input>
-                <input value={lineValues.secondLetter} readOnly style={{backgroundColor: lineValues.secondLetterColor, fontSize:'25px', width: '64px', textAlign: 'center'}}></input>
-                <input value={lineValues.thirdLetter} readOnly style={{backgroundColor: lineValues.thirdLetterColor, fontSize:'25px', width: '64px', textAlign: 'center'}}></input>
-           </div>
+        <Stack direction={'row'} spacing={2}>
+            <TextField value={lineValues.firstLetter} variant="standard"
+                inputProps={{ style: { fontSize: '26px', backgroundColor: lineValues.firstLetterColor, textAlign: 'center' } }}
+            ></TextField>
+            <TextField value={lineValues.secondLetter} variant="standard"
+                inputProps={{ style: { fontSize: '26px', backgroundColor: lineValues.secondLetterColor, textAlign: 'center' } }}
+            ></TextField>
+            <TextField value={lineValues.thirdLetter} variant="standard"
+                inputProps={{ style: { fontSize: '26px', backgroundColor: lineValues.thirdLetterColor, textAlign: 'center' } }}
+            ></TextField>
+        </Stack>
     )
 }
 
